@@ -35,9 +35,7 @@ jobs:
             
       - name: List the state of node modules & Install dependencies
         continue-on-error: true
-        run: |
-          npm list 
-          npm install
+        run: npm install
       
       - name: Buliding...
         run: npm run docs:build
