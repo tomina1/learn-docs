@@ -34,7 +34,6 @@ jobs:
             ${{ runner.os }}-
             
       - name: List the state of node modules & Install dependencies
-        if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
         continue-on-error: true
         run: |
           npm list 
