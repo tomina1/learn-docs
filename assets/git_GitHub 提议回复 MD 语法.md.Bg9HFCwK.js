@@ -1,0 +1,54 @@
+import{_ as s,c as a,o as n,a3 as p}from"./chunks/framework.JR-NCfhW.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"git/GitHub 提议回复 MD 语法.md","filePath":"git/GitHub 提议回复 MD 语法.md","lastUpdated":1714381328000}'),e={name:"git/GitHub 提议回复 MD 语法.md"},l=p(`<h2 id="语法" tabindex="-1">语法 <a class="header-anchor" href="#语法" aria-label="Permalink to &quot;语法&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>#：1-6 级标题</span></span>
+<span class="line"><span>&gt;：竖线前缀，引用文本</span></span>
+<span class="line"><span>-、*、+：无序列表</span></span>
+<span class="line"><span>数字.：有序</span></span>
+<span class="line"><span>---：分割线</span></span>
+<span class="line"><span>\` \`：标注句子和内容(CTRL + E)</span></span>
+<span class="line"><span>** **、__ __：加粗(CTRL + B)</span></span>
+<span class="line"><span>* *、_ _：斜体(CTRL + I)</span></span>
+<span class="line"><span>~~ ~~：删除线</span></span>
+<span class="line"><span>&lt;sub&gt;&lt;/sub&gt;、&lt;sup&gt;&lt;/sup&gt;：下、上标</span></span>
+<span class="line"><span>[ctx](url)：创建链接文本</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>** ** &amp; _ _：粗体内含斜体</span></span>
+<span class="line"><span>*** ***：全部粗体和斜体</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- [x]：任务列表。含有 x 则完成。悬浮右侧按钮则可以转为问题</span></span>
+<span class="line"><span>[^1]：脚注。文本边上声明，底部声明：文本描述</span></span>
+<span class="line"><span>@github/support、@organization/team-name：提及项目人员、团队及所有成员</span></span>
+<span class="line"><span>#：调出建议的议题和拉去请求的列表</span></span>
+<span class="line"><span>:emoji-code: ：这个格式添加表情符号</span></span>
+<span class="line"><span>&lt;!-- ctx --&gt;：注释</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>这样表示提示文本</span></span>
+<span class="line"><span>&gt; [!NOTE | TIP | IMPORTANT | WARNING | CAUTION]</span></span>
+<span class="line"><span>&gt; ctx</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>这样实现折叠面板</span></span>
+<span class="line"><span>&lt;details open&gt;</span></span>
+<span class="line"><span>	&lt;summary&gt;title&lt;/summary&gt;</span></span>
+<span class="line"><span>	ctx</span></span>
+<span class="line"><span>&lt;/details&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>议题、拉取请求</span></span>
+<span class="line"><span>[# | GH- | Username/Repository# | Organization_name/Repository#] + id</span></span>
+<span class="line"><span>使用关键字：closes、fixes、fixed、resolve、resolves、resolved、修复、已关闭、关闭 + #id</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>提交 SHA，自动转为短链接</span></span>
+<span class="line"><span>URL、SHA、User@SHA、Username/Repository@SHA</span></span></code></pre></div><p>支持颜色模块：<code>HEX</code>、<code>RGB</code>、<code>HSL</code> 支持章节链接、相对链接( ./、../ 当前路径链接到其他 <code>*.md</code>) 支持图片<code>![ctx](url)</code>：图片和替换文字。主题切换：<code>media=&quot;prefers-color-scheme:dark|light&quot;</code></p><h2 id="表格格式" tabindex="-1">表格格式 <a class="header-anchor" href="#表格格式" aria-label="Permalink to &quot;表格格式&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>| 和 - 组合而成。- 上面一层为表头。</span></span>
+<span class="line"><span>内部可使用 链接、内联代码块和文本样式</span></span>
+<span class="line"><span>:---、:---:、---:：左中右对齐</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>| Command | Description |</span></span>
+<span class="line"><span>| --- | --- |</span></span>
+<span class="line"><span>| git status | List all new or modified files |</span></span></code></pre></div><h2 id="关系图" tabindex="-1">关系图 <a class="header-anchor" href="#关系图" aria-label="Permalink to &quot;关系图&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>​\`\`\`mermaid</span></span>
+<span class="line"><span>    graph TD;</span></span>
+<span class="line"><span>    A--&gt;B;</span></span>
+<span class="line"><span>    A--&gt;C;</span></span>
+<span class="line"><span>    B--&gt;D;</span></span>
+<span class="line"><span>    C--&gt;D;</span></span>
+<span class="line"><span>​\`\`\`</span></span>
+<span class="line"><span>地图</span></span>
+<span class="line"><span>​\`\`\`geojson</span></span>
+<span class="line"><span>	{ type: &quot;FeatureCollection&quot; }</span></span>
+<span class="line"><span>​\`\`\`</span></span></code></pre></div>`,7),i=[l];function t(c,o,d,r,h,u){return n(),a("div",null,i)}const m=s(e,[["render",t]]);export{_ as __pageData,m as default};
