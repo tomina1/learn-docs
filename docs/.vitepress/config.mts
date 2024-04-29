@@ -88,7 +88,7 @@ export default defineConfig({
       }
     }
   },
-  vite:{
-    base: "./"
+  vite: {
+    base: process.env.NODE_ENV === 'production' ? "learn-docs" : "./",
   }
 })
