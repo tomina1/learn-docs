@@ -1,0 +1,55 @@
+
+name: Deploy_Page
+
+run-name: ${{ github.actor }} docs is update repo, start building...
+
+on:
+  workflow_call:
+    inputs:
+      v:
+        type: string
+      path:
+        type: string
+        default: ./dist
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set Node Version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Cache Node Modules
+        id: cache-npm
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ inputs.v }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ inputs.v }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+            
+      - name: List the state of node modules & Install dependencies
+        if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        continue-on-error: true
+        run: npm install
+      
+      - name: Buliding...
+        run: npm run docs:build
+
+      - name: Deploy to Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_BRANCH: gh-pages
+          publish_dir: ${{ inputs.path }}
