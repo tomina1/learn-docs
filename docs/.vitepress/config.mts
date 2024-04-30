@@ -32,11 +32,13 @@ export default defineConfig({
           { text: 'magicString (代替AST)', link: '/vue-perimeter/magicString' },
           { text: 'unimport (自动导入)', link: '/vue-perimeter/unimport' },
           { text: 'unplugin (多框架中间层)', link: '/vue-perimeter/unplugin' },
+          { text: 'create-vue (解读)', link: '/vue-perimeter/create-vue' },
         ]
       },
       {
         text: "Node 开发工具",
         items: [
+          { text: 'estree (AST类型)', link: '/node-perimeter/estree' },
           { text: 'fast-glob (查找)', link: '/node-perimeter/fast-glob' },
           { text: 'fs-extra (I/O工具)', link: '/node-perimeter/fs-extra' },
           { text: 'minimatch (glob->JSReg)', link: '/node-perimeter/minimatch' }
@@ -86,6 +88,15 @@ export default defineConfig({
           }
         }
       }
+    },
+
+    footer: {
+      copyright: "Copyright @  2024-present To-Mina"
+    },
+
+    docFooter:{
+      prev: "上一篇",
+      next: "下一篇"
     }
   },
   base: process.env.NODE_ENV === 'production' ? "/learn-docs" : "/",

@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "types": ["vite/client", "vite-plugin-pwa/client"],
+      "useDefineForClassFields": true,
+      "module": "ESNext",
+      "moduleResolution": "Node",
+      "strict": false,
+      "jsx": "preserve",
+      "sourceMap": true,
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "esModuleInterop": true,
+      "lib": ["ESNext", "DOM"],
+      "skipLibCheck": true,
+      "baseUrl": "./",
+    },
+    "include": ["docs/**/*.ts", "docs/**/*.d.ts", "docs/**/*.vue", "docs/**/*.md"],
+    "exclude": []
+  }
+  
