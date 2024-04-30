@@ -19,6 +19,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
+      
+      - name: pnpm installing...
+        run: npm i -g pnpm
 
       - name: Cache Node Modules
         id: cache-npm
@@ -35,7 +38,7 @@ jobs:
             
       - name: List the state of node modules & Install dependencies
         continue-on-error: true
-        run: npm install
+        run: pnpm install
       
       - name: Buliding...
         run: npm run docs:build

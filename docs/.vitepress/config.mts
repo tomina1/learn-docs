@@ -88,7 +88,5 @@ export default defineConfig({
       }
     }
   },
-  vite: {
-    base: "learn-docs",
-  }
+  base: "./"
 })
