@@ -45,6 +45,13 @@ export default defineConfig({
         ]
       },
       {
+        text: "service-related",
+        items: [
+          { text: 'linux 指令', link: '/service-related/linux-cmd' },
+          { text: 'shell 脚本', link: '/service-related/shell' },
+        ]
+      },
+      {
         text: "Git",
         items: [
           { text: 'GH_Actions', link: '/git/GitHub_Actions' },
