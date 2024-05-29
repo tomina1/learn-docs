@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      xmind-embed-viewer:
+        specifier: ^1.2.0
+        version: 1.2.0
     devDependencies:
       '@types/node':
         specifier: ^20.12.7
@@ -623,6 +627,9 @@ packages:
       typescript:
         optional: true
 
+  xmind-embed-viewer@1.2.0:
+    resolution: {integrity: sha512-dtsxbeePxhSy3g/Kyc4Oe1K3hfdCmkiyRtvONN2KZ2MqeL/QBFTvL4imCiXfAiLpincl42r87OOA3V3Shcza4A==}
+
 snapshots:
 
   '@algolia/autocomplete-core@1.9.3(@algolia/client-search@4.23.3)(algoliasearch@4.23.3)(search-insights@2.13.0)':
@@ -1205,3 +1212,5 @@ snapshots:
       '@vue/runtime-dom': 3.4.25
       '@vue/server-renderer': 3.4.25(vue@3.4.25)
       '@vue/shared': 3.4.25
+
+  xmind-embed-viewer@1.2.0: {}

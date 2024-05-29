@@ -71,6 +71,9 @@ export default defineConfig({
         items: [
           { text: '刷题盲点', link: '/knowledge-points/blindness' },
           { text: '知识点', link: '/knowledge-points/knowledges' },
+          { text: 'Pinia', link: '/knowledge-points/pinia' },
+          { text: 'Router', link: '/knowledge-points/router' },
+          { text: 'Vue-CLI', link: '/knowledge-points/vue-cli' },
         ]
       }
     ],
