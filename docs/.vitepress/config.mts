@@ -1,4 +1,7 @@
 import { defineConfig } from 'vitepress'
+import { createRequire } from "node:module"
+
+const require = createRequire(import.meta.url)
 
 export default defineConfig({
   title: "To-Mina",
@@ -110,4 +113,13 @@ export default defineConfig({
     }
   },
   base: process.env.NODE_ENV === 'production' ? "/learn-docs" : "/",
+
+  vite: {
+    resolve: {
+      /** fix: 导入依赖三方依赖后，构建时解析错误问题 */
+      alias: {
+        "xmind-embed-viewer": require.resolve("xmind-embed-viewer/dist/esm/index.js")
+      }
+    }
+  }
 })

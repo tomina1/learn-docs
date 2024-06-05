@@ -14,11 +14,12 @@ aside: false
     defineOptions({
         name: "Vue_CLI_Flow"
     })
-    const data = fetch("./Vue-CLI.xmind")
-        .then(res => res.arrayBuffer())
 
     let viewer
     onMounted(() => {
+        const data = fetch("./Vue-CLI.xmind")
+            .then(res => res.arrayBuffer())
+
         viewer = new XMindEmbedViewer({
             el: "#xmind",
             region: "cn"

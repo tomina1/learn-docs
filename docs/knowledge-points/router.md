@@ -14,11 +14,12 @@ aside: false
     defineOptions({
         name: "Router_Flow"
     })
-    const data = fetch("./Router.xmind")
-        .then(res => res.arrayBuffer())
 
     let viewer
     onMounted(() => {
+        const data = fetch("./Router.xmind")
+            .then(res => res.arrayBuffer())
+
         viewer = new XMindEmbedViewer({
             el: "#xmind",
             region: "cn"

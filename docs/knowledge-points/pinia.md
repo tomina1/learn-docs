@@ -14,11 +14,12 @@ aside: false
     defineOptions({
         name: "Pinia_Flow"
     })
-    const data = fetch("./Pinia.xmind")
-        .then(res => res.arrayBuffer())
 
     let viewer
     onMounted(() => {
+        const data = fetch("./Pinia.xmind")
+            .then(res => res.arrayBuffer())
+
         viewer = new XMindEmbedViewer({
             el: "#xmind",
             region: "cn"
