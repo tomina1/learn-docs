@@ -17,7 +17,7 @@ aside: false
 
     let viewer
     onMounted(() => {
-        const data = fetch("./Router.xmind")
+        const data = fetch(import.meta.env.BASE_URL + "./Router.xmind")
             .then(res => res.arrayBuffer())
 
         viewer = new XMindEmbedViewer({
@@ -35,7 +35,7 @@ aside: false
     
 </script>
 <style>
-    .content-container {
+    #xmind {
         max-width: unset !important;
         width: 60vw;
     }

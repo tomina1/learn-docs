@@ -1,7 +1,10 @@
 import { defineConfig } from 'vitepress'
 import { createRequire } from "node:module"
+import viteCompression from 'vite-plugin-compression'
 
 const require = createRequire(import.meta.url)
+
+const base = process.env.NODE_ENV === 'production' ? "/learn-docs" : "/"
 
 export default defineConfig({
   title: "To-Mina",
@@ -78,6 +81,15 @@ export default defineConfig({
           { text: 'Router', link: '/knowledge-points/router' },
           { text: 'Vue-CLI', link: '/knowledge-points/vue-cli' },
         ]
+      },
+      {
+        text: "linux",
+        items: [
+          { text: 'linux 指令集合', link: '/linux/linux-cmd' },
+          { text: 'shell 脚本语法', link: '/linux/shell' },
+          { text: 'nginx 部署脚本', link: '/linux/nginx' },
+          { text: 'sh 部署脚本', link: '/linux/sh' },
+        ]
       }
     ],
 
@@ -107,14 +119,15 @@ export default defineConfig({
       copyright: "Copyright @  2024-present To-Mina"
     },
 
-    docFooter:{
+    docFooter: {
       prev: "上一篇",
       next: "下一篇"
     }
   },
-  base: process.env.NODE_ENV === 'production' ? "/learn-docs" : "/",
+  base,
 
   vite: {
+    plugins: [viteCompression({ algorithm: 'gzip' })],
     resolve: {
       /** fix: 导入依赖三方依赖后，构建时解析错误问题 */
       alias: {

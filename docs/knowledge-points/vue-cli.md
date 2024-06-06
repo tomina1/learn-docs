@@ -17,7 +17,7 @@ aside: false
 
     let viewer
     onMounted(() => {
-        const data = fetch("./Vue-CLI.xmind")
+        const data = fetch(import.meta.env.BASE_URL + "./Vue-CLI.xmind")
             .then(res => res.arrayBuffer())
 
         viewer = new XMindEmbedViewer({
@@ -34,8 +34,8 @@ aside: false
     })
     
 </script>
-<style>
-    .content-container {
+<style scoped>
+    #xmind {
         max-width: unset !important;
         width: 60vw;
     }
